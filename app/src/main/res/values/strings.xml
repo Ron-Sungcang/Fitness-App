@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">30 Days Fitness</string>
+    <string name="program1">Starting Strength</string>
+    <string name="programdesc1">The Starting Strength Program is designed for novice lifters.
+    This program takes advantage of "newbie gains" by adding 10 pounds to the squat after 2 times it\'s performed,
+        15-20 lbs to the deadlift the first couple times, and 10 lbs the next several times it\'s performed.
+        For the bench press/shoulder press and the power clean you increment by 5lbs. This program is designed for 3 days a week M/W/F.</string>
+    <string name="phase1">Phase 1</string>
+    <string name="phase2">Phase 2</string>
+    <string name="phase3">Phase 3</string>
+    <string name="squat">Squats</string>
+    <string name="deadlift">Deadlifts</string>
+    <string name="chinup">Chin-Ups</string>
+    <string name="bench">Bench Press</string>
+    <string name="shoulderp">Shoulder Press</string>
+    <string name="clean">Power Cleans</string>
+
+</resources>
