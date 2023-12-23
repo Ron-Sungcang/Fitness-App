@@ -9,10 +9,35 @@
     <string name="phase2">Phase 2</string>
     <string name="phase3">Phase 3</string>
     <string name="squat">Squats</string>
+    <string name="squatdesc">1. Stand with feet a little wider than hip width, toes facing front.\n
+    2. Drive your hips back—bending at the knees and ankles and pressing your knees slightly open—as you…\n
+    3. Sit into a squat position while still keeping your heels and toes on the ground, chest up and shoulders back.\n
+    4. Strive to eventually reach parallel, meaning knees are bent to a 90-degree angle.\n
+    5. Press into your heels and straighten legs to return to a standing upright position.</string>
     <string name="deadlift">Deadlifts</string>
+    <string name="deadliftdesc">1. Stand with your mid-foot under the barbell\n
+    2. Bend over and grab the bar with a shoulder-width grip\n
+    3. Bend your knees until your shins touch the bar\n
+    4. Lift your chest up and straighten your lower back\n
+    5. Take a big breath, hold it, and stand up with the weight</string>
     <string name="chinup">Chin-Ups</string>
+    <string name="chinupdesc">1. Stand with your arms shoulder-width apart and reach up to grab the overhead bar. Make sure to use an underhand grip — so your palms face toward you.\n
+    2. Brace your abdominal muscles to create tension throughout your body — this increases your stability as you move.\n
+    3. Pull yourself up from your stationary position until your chin is above the bar. Your legs should remain as still as possible and your neck should be in a neutral position, with your head facing forward.\n
+    4. Pause for a moment at the top.\n
+    5. Then slowly lower yourself back down. Force yourself to move slowly during this portion to maximize your gains from this exercise. </string>
     <string name="bench">Bench Press</string>
+    <string name="benchdesc">1. Lie on the bench with your eyes under the bar\n
+    2. Grab the bar with a medium grip-width (thumbs around the bar!)\n
+    3. Unrack the bar by straightening your arms\n
+    4. Lower the bar to your mid-chest\n
+    5. Press the bar back up until your arms are straight</string>
     <string name="shoulderp">Shoulder Press</string>
+    <string name="shoulderpdesc">1. Stand with the bar on your front shoulders, and your hands next to your shoulders\n
+    2. Press the bar over your head, until it’s balanced over your shoulders and mid-foot\n
+    3. Lock your elbows at the top, and shrug your shoulders to the ceiling.</string>
     <string name="clean">Power Cleans</string>
+    <string name="cleandesc">Since this is a complicated excercise we will do it in phases.\n
+    </string>
 
 </resources>
