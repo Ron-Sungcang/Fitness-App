@@ -39,5 +39,7 @@
     <string name="clean">Power Cleans</string>
     <string name="cleandesc">Since this is a complicated excercise we will do it in phases.\n
     </string>
+    <string name="deadclean">Deadlift/Power Clean</string>
+    <string name="deadcleandesc">At this point you’ve become strong enough to pull enough weight that we limit deadlift and cleaning frequency.</string>
 
 </resources>
