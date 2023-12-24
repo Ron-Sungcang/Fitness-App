@@ -1,5 +1,7 @@
 package com.example.a30daysfitness
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -45,7 +47,7 @@ class StartingStrengthScreen {
                 Box{
                     Image(
                         painter = painterResource(excercise.imageRes),
-                        contentDescription = stringResource(id = R.string.squat),
+                        contentDescription = LocalContext.current.getString(excercise.nameRes),
                         modifier = Modifier
                             .size(72.dp)
                             .clip(MaterialTheme.shapes.small)
@@ -59,10 +61,32 @@ class StartingStrengthScreen {
                         style = MaterialTheme.typography.displaySmall
                     )
                     Text(
-                        text = "Reps: " + excercise.reps.toString() + "Sets: " + excercise.sets.toString()
+                        text = "Reps: " + excercise.reps.toString() + "Sets: " + excercise.sets.toString(),
+                        style = MaterialTheme.typography.bodyLarge
                     )
                 }
             }
+        }
+    }
+
+    /**
+     * Composable function for when the FitItem gets expanded
+     */
+    @Composable
+    fun FitDesc(
+        @StringRes excerciseDesc: Int,
+        @DrawableRes excerciseImg: Int,
+        modifier: Modifier = Modifier)
+    {
+        Column(modifier = modifier){
+            Image(
+                painter = painterResource(id = excerciseImg),
+                contentDescription = stringResource(id = R.string.squat)
+            )
+        Text(
+                text = stringResource(id = excerciseDesc),
+                style = MaterialTheme.typography.bodyLarge
+            )
         }
     }
 
@@ -70,7 +94,6 @@ class StartingStrengthScreen {
     @Composable
     private fun FitPreview(){
         _30DaysFitnessTheme {
-
         }
     }
 }
