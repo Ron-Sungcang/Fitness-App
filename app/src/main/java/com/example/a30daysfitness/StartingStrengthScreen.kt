@@ -25,11 +25,16 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a30daysfitness.model.ExcerciseRepository
@@ -108,7 +113,7 @@ class StartingStrengthScreen {
     ){
         Column(modifier = modifier) {
             Text(
-                text = stringResource(id = R.string.dayA),
+                text = stringResource(id = dayRes),
                 style = MaterialTheme.typography.displaySmall,
                 modifier = Modifier.padding(start = 8.dp)
             )
@@ -132,6 +137,7 @@ class StartingStrengthScreen {
      */
     @Composable
     fun FitItem(excercise: Excercises, modifier: Modifier = Modifier){
+        var expanded by remember { mutableStateOf(false) }
         Card(
             modifier = modifier,
             shape = MaterialTheme.shapes.medium,
@@ -158,10 +164,14 @@ class StartingStrengthScreen {
                         style = MaterialTheme.typography.displaySmall
                     )
                     Text(
-                        text = "Reps: " + excercise.reps.toString() + "Sets: " + excercise.sets.toString(),
+                        text = "Reps: " + excercise.reps.toString() + " " + "Sets: " + excercise.sets.toString(),
                         style = MaterialTheme.typography.bodyLarge
                     )
+                    if(expanded){
+                        FitDesc(excerciseDesc = excercise.descriptionRes , excerciseImg = excercise.imageRes)
+                    }
                 }
+                FitItemButton(expanded = expanded, onClick = { expanded = !expanded })
             }
         }
     }
@@ -180,7 +190,7 @@ class StartingStrengthScreen {
                 painter = painterResource(id = excerciseImg),
                 contentDescription = stringResource(id = R.string.squat)
             )
-        Text(
+            Text(
                 text = stringResource(id = excerciseDesc),
                 style = MaterialTheme.typography.bodyLarge
             )
