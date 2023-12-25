@@ -24,7 +24,7 @@ val Typography = Typography(
     ),
     displayLarge = TextStyle(
         fontFamily = Poppins,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontSize = 30.sp
     ),
     displayMedium = TextStyle(
@@ -37,5 +37,6 @@ val Typography = Typography(
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp
     )
+
 
 )
