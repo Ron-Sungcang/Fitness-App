@@ -43,5 +43,7 @@
     </string>
     <string name="deadclean">Deadlift/Power Clean</string>
     <string name="deadcleandesc">At this point you’ve become strong enough to pull enough weight that we limit deadlift and cleaning frequency.</string>
+    <string name="expand_button_content_description">See more or less information about an exercise.</string>
+
 
 </resources>

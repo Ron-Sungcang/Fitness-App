@@ -15,8 +15,13 @@ import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -178,6 +183,27 @@ class StartingStrengthScreen {
         Text(
                 text = stringResource(id = excerciseDesc),
                 style = MaterialTheme.typography.bodyLarge
+            )
+        }
+    }
+
+    /**
+     * A composable function that has an IconButton that has the functionality of an expandable button
+     */
+    @Composable
+    private fun FitItemButton(
+        expanded: Boolean,
+        onClick: () -> Unit,
+        modifier: Modifier = Modifier
+    ){
+        IconButton(
+            onClick = onClick,
+            modifier = modifier
+        ) {
+            Icon(
+                imageVector = if(expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+                contentDescription = stringResource(R.string.expand_button_content_description),
+                tint = MaterialTheme.colorScheme.secondary
             )
         }
     }
