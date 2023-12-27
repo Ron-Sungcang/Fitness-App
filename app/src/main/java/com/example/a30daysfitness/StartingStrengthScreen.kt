@@ -28,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -79,9 +80,14 @@ fun StartingStrengthLazyList(
             )
 
         }
-        items(excerciselist1a){excercise ->
+        items(
+            items = excerciselist1a,
+            ){excercise ->
+            val saveExer = remember{
+                excercise
+            }
             FitItem(
-                excercise = excercise,
+                excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
@@ -96,8 +102,11 @@ fun StartingStrengthLazyList(
 
         }
         items(excerciselist1b){excercise ->
+            val saveExer = remember{
+                excercise
+            }
             FitItem(
-                excercise = excercise,
+                excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
@@ -113,8 +122,11 @@ fun StartingStrengthLazyList(
             )
         }
         items(excerciselist2a){excercise ->
+            val saveExer = remember{
+                excercise
+            }
             FitItem(
-                excercise = excercise,
+                excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
@@ -128,8 +140,11 @@ fun StartingStrengthLazyList(
 
         }
         items(excerciselist2b){excercise ->
+            val saveExer = remember {
+                excercise
+            }
             FitItem(
-                excercise = excercise,
+                excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
@@ -146,8 +161,11 @@ fun StartingStrengthLazyList(
             )
         }
         items(excerciselist3a){excercise ->
+            val saveExer = remember{
+                excercise
+            }
             FitItem(
-                excercise = excercise,
+                excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
@@ -161,13 +179,18 @@ fun StartingStrengthLazyList(
 
         }
         items(excerciselist3b){excercise ->
+            val saveExer = remember{
+                excercise
+            }
             FitItem(
-                excercise = excercise,
+                excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
     }
 }
+
+
 
 
 /**
@@ -176,7 +199,7 @@ fun StartingStrengthLazyList(
  */
 @Composable
 fun FitItem(excercise: Excercises, modifier: Modifier = Modifier) {
-    var expanded by remember { mutableStateOf(false) }
+    var expanded by rememberSaveable { mutableStateOf(false) }
     Card(
         modifier = modifier,
         shape = MaterialTheme.shapes.medium,

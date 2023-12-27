@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a30daysfitness.model.ExcerciseRepository
@@ -34,11 +35,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun FitnessApp() {
     val exerciselist1a = remember {ExcerciseRepository.starting1a}
-    val exerciselist1b = remember {ExcerciseRepository.starting1a}
-    val exerciselist2a = remember {ExcerciseRepository.starting1a}
-    val exerciselist2b = remember {ExcerciseRepository.starting1a}
-    val exerciselist3a = remember {ExcerciseRepository.starting1a}
-    val exerciselist3b = remember {ExcerciseRepository.starting1a}
+    val exerciselist1b = remember {ExcerciseRepository.starting1b}
+    val exerciselist2a = remember {ExcerciseRepository.starting2a}
+    val exerciselist2b = remember {ExcerciseRepository.starting2b}
+    val exerciselist3a = remember {ExcerciseRepository.starting3a}
+    val exerciselist3b = remember {ExcerciseRepository.starting3b}
     StartingStrengthLazyList(
         excerciselist1a = exerciselist1a,
         excerciselist1b = exerciselist1b,

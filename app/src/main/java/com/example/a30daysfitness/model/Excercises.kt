@@ -8,5 +8,5 @@ data class Excercises (
     @StringRes val descriptionRes: Int,
     @DrawableRes val imageRes: Int,
     val reps: Int,
-    val sets: Int
+    val sets: Int,
 )
