@@ -3,6 +3,7 @@ package com.example.a30daysfitness.model
 import com.example.a30daysfitness.R
 
 object ExcerciseRepository {
+
     val starting = listOf(
         Excercises(
             nameRes = R.string.squat,

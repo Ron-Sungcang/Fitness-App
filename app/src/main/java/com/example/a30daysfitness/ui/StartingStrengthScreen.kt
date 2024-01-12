@@ -93,7 +93,7 @@ fun StartingStrengthLazyList(
             val saveExer = remember{
                 excercise
             }
-            FitItem(
+            StartingItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -112,7 +112,7 @@ fun StartingStrengthLazyList(
             val saveExer = remember{
                 excercise
             }
-            FitItem(
+            StartingItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -132,7 +132,7 @@ fun StartingStrengthLazyList(
             val saveExer = remember{
                 excercise
             }
-            FitItem(
+            StartingItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -150,7 +150,7 @@ fun StartingStrengthLazyList(
             val saveExer = remember {
                 excercise
             }
-            FitItem(
+            StartingItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -171,7 +171,7 @@ fun StartingStrengthLazyList(
             val saveExer = remember{
                 excercise
             }
-            FitItem(
+            StartingItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -189,7 +189,7 @@ fun StartingStrengthLazyList(
             val saveExer = remember{
                 excercise
             }
-            FitItem(
+            StartingItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -205,7 +205,7 @@ fun StartingStrengthLazyList(
  * each individual workout
  */
 @Composable
-fun FitItem(excercise: Excercises, modifier: Modifier = Modifier) {
+fun StartingItem(excercise: Excercises, modifier: Modifier = Modifier) {
     var expanded by rememberSaveable { mutableStateOf(false) }
     Card(
         modifier = modifier,
@@ -294,7 +294,7 @@ private fun FitItemButton(
 
 @Preview
 @Composable
-private fun FitPreview() {
+private fun StartingPreview() {
     _30DaysFitnessTheme {
         StartingStrengthLazyList(
             uiState = FitnessUiState(),
