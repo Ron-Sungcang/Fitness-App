@@ -1,11 +1,10 @@
-package com.example.a30daysfitness
+package com.example.a30daysfitness.ui
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,6 +24,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -38,9 +38,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.a30daysfitness.R
 import com.example.a30daysfitness.model.ExcerciseRepository
 import com.example.a30daysfitness.model.Excercises
+import com.example.a30daysfitness.model.FitnessUiState
+import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
+
+@Composable
+fun StartingStrenghtScreen(
+    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+){
+    val uiState by viewModel.uiState.collectAsState()
+    StartingStrengthLazyList(uiState = uiState)
+
+}
 
 /**
  * A composable function that consists of a lazycolumn to display
@@ -48,12 +60,7 @@ import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
  */
 @Composable
 fun StartingStrengthLazyList(
-    excerciselist1a: List<Excercises>,
-    excerciselist1b: List<Excercises>,
-    excerciselist2a: List<Excercises>,
-    excerciselist2b: List<Excercises>,
-    excerciselist3a: List<Excercises>,
-    excerciselist3b: List<Excercises>,
+    uiState: FitnessUiState,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(modifier = modifier) {
@@ -81,7 +88,7 @@ fun StartingStrengthLazyList(
 
         }
         items(
-            items = excerciselist1a,
+            items = uiState.currentProgram1A,
             ){excercise ->
             val saveExer = remember{
                 excercise
@@ -101,7 +108,7 @@ fun StartingStrengthLazyList(
             )
 
         }
-        items(excerciselist1b){excercise ->
+        items(uiState.currentProgram1B){excercise ->
             val saveExer = remember{
                 excercise
             }
@@ -121,7 +128,7 @@ fun StartingStrengthLazyList(
                 modifier = Modifier.padding(start = 8.dp)
             )
         }
-        items(excerciselist2a){excercise ->
+        items(uiState.currentProgram2A){excercise ->
             val saveExer = remember{
                 excercise
             }
@@ -139,7 +146,7 @@ fun StartingStrengthLazyList(
             )
 
         }
-        items(excerciselist2b){excercise ->
+        items(uiState.currentProgram2B){excercise ->
             val saveExer = remember {
                 excercise
             }
@@ -160,7 +167,7 @@ fun StartingStrengthLazyList(
                 modifier = Modifier.padding(start = 8.dp)
             )
         }
-        items(excerciselist3a){excercise ->
+        items(uiState.currentProgram3A){excercise ->
             val saveExer = remember{
                 excercise
             }
@@ -178,7 +185,7 @@ fun StartingStrengthLazyList(
             )
 
         }
-        items(excerciselist3b){excercise ->
+        items(uiState.currentProgram3B){excercise ->
             val saveExer = remember{
                 excercise
             }
@@ -290,12 +297,7 @@ private fun FitItemButton(
 private fun FitPreview() {
     _30DaysFitnessTheme {
         StartingStrengthLazyList(
-            excerciselist1a = ExcerciseRepository.starting1a,
-            excerciselist1b = ExcerciseRepository.starting1b,
-            excerciselist2a = ExcerciseRepository.starting2a,
-            excerciselist2b = ExcerciseRepository.starting2b,
-            excerciselist3a = ExcerciseRepository.starting3a,
-            excerciselist3b = ExcerciseRepository.starting3b
+            uiState = FitnessUiState(),
         )
     }
 }
