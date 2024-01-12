@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">30 Days Fitness</string>
     <string name="program1">Starting Strength</string>
+    <string name="program1desc">The Starting Strength Novice Program can be broken down into two workout days, Day A and Day B.
+        The entire body is worked each session. As the trainee progresses through the program, Days A and B are slightly modified
+        to take into account the adaptations in the body of the lifter.</string>
+    <string name="program2">Judo: Beginner Strength</string>
+    <string name="program2desc">This beginner program is aimed to build strength for judokas. It is meant to start off with and to progress to the intermediate circuit.</string>
+    <string name="program3">3 Day Split</string>
+    <string name="program3desc">A 3 day workout split can be a great way to plan your workout week if you’re pressed for time or don’t
+        want to be in the gym 5 times a week. The different variations of a 3 day workout split are arguably amongst the most used by
+        gym athletes all around the world.</string>
     <string name="programdesc1">The Starting Strength Program is designed for novice lifters.
     This program takes advantage of \"newbie gains\" by adding 10 pounds to the squat after 2 times it\'s performed,
         15-20 lbs to the deadlift the first couple times, and 10 lbs the next several times it\'s performed.
