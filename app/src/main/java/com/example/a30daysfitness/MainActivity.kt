@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a30daysfitness.model.ExcerciseRepository
+import com.example.a30daysfitness.ui.FitScreen
 import com.example.a30daysfitness.ui.StartingStrenghtScreen
 import com.example.a30daysfitness.ui.StartingStrengthLazyList
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
@@ -34,13 +35,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun FitnessApp() {
-    StartingStrenghtScreen()
+    FitScreen()
 }
 
 @Preview(showBackground = true)
 @Composable
 fun FitnessPreview() {
     _30DaysFitnessTheme {
-        StartingStrenghtScreen()
+        FitScreen()
     }
 }

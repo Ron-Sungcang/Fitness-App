@@ -4,6 +4,7 @@ import com.example.a30daysfitness.model.ExcerciseRepository.starting
 
 data class FitnessUiState (
     val currentDessertIndex: Int = 0,
+    val currentPrograms: List<Programs> = listOf(),
     val currentProgram1A: List<Excercises> = listOf(),
     val currentProgram1B: List<Excercises> = listOf(),
     val currentProgram2A: List<Excercises> = listOf(),
