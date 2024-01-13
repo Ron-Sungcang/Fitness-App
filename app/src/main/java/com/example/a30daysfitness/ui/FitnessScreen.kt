@@ -15,6 +15,8 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -24,14 +26,27 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a30daysfitness.R
 import com.example.a30daysfitness.model.ExcerciseRepository
+import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.model.Programs
+import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
 import javax.sql.DataSource
 
 @Composable
-fun FitLazyList(programList: List<Programs>,modifier: Modifier = Modifier){
+fun FitScreen(
+    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+){
+    val uiState by viewModel.uiState.collectAsState()
+    FitLazyList(uiState = uiState)
+}
+
+@Composable
+fun FitLazyList(
+    uiState: FitnessUiState,
+    modifier: Modifier = Modifier)
+{
     LazyColumn(modifier = modifier){
-        items(programList){programs ->
+        items(uiState.currentPrograms){programs ->
             FitItem(
                 programs = programs,
                 modifier = Modifier.padding(8.dp)
@@ -62,7 +77,7 @@ fun FitItem(programs: Programs, modifier: Modifier = Modifier){
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(194.dp),
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Fit
                 )
             }
             Spacer(Modifier.height(16.dp))
@@ -78,6 +93,6 @@ fun FitItem(programs: Programs, modifier: Modifier = Modifier){
 @Composable
 private fun FitPreview(){
     _30DaysFitnessTheme {
-        FitLazyList(programList = ExcerciseRepository.programs)
+        FitScreen()
     }
 }

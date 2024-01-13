@@ -1,9 +1,11 @@
 package com.example.a30daysfitness.ui.theme
 
 import androidx.lifecycle.ViewModel
+import com.example.a30daysfitness.model.ExcerciseRepository.programs
 import com.example.a30daysfitness.model.ExcerciseRepository.starting
 import com.example.a30daysfitness.model.Excercises
 import com.example.a30daysfitness.model.FitnessUiState
+import com.example.a30daysfitness.model.Programs
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,12 +14,13 @@ import kotlinx.coroutines.flow.update
 
 class FitnessViewModel: ViewModel() {
     private val _uiState = MutableStateFlow(FitnessUiState(
-        currentProgram1A = make_workout_lis(starting, 0,1,2),
-        currentProgram1B = make_workout_lis(starting, 0,3,2),
-        currentProgram2A = make_workout_lis(starting, 0,1,2),
-        currentProgram2B = make_workout_lis(starting, 0,3,4),
-        currentProgram3A = make_workout_lis(starting, 0,1,5),
-        currentProgram3B = make_workout_lis(starting,0,3,6)
+        currentPrograms = programs,
+        //currentProgram1A = make_workout_lis(starting, 0,1,2),
+        //currentProgram1B = make_workout_lis(starting, 0,3,2),
+       // currentProgram2A = make_workout_lis(starting, 0,1,2),
+       // currentProgram2B = make_workout_lis(starting, 0,3,4),
+       // currentProgram3A = make_workout_lis(starting, 0,1,5),
+       // currentProgram3B = make_workout_lis(starting,0,3,6)
         )
     )
     val uiState: StateFlow<FitnessUiState> = _uiState.asStateFlow()
