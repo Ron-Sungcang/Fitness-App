@@ -1,4 +1,4 @@
-package com.example.a30daysfitness.ui
+package com.example.a30daysfitness
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -22,16 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.a30daysfitness.R
-import com.example.a30daysfitness.model.ExcerciseRepository
 import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.model.Programs
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
-import javax.sql.DataSource
 
 @Composable
 fun FitScreen(
