@@ -239,13 +239,13 @@ fun StartingItem(excercise: Excercises, modifier: Modifier = Modifier) {
                     style = MaterialTheme.typography.bodyLarge
                 )
                 if (expanded) {
-                    FitDesc(
+                    StartingDesc(
                         excerciseDesc = excercise.descriptionRes,
                         excerciseImg = excercise.imageRes
                     )
                 }
             }
-            FitItemButton(expanded = expanded, onClick = { expanded = !expanded })
+            StartingItemButton(expanded = expanded, onClick = { expanded = !expanded })
         }
     }
 }
@@ -254,7 +254,7 @@ fun StartingItem(excercise: Excercises, modifier: Modifier = Modifier) {
  * Composable function for when the FitItem gets expanded
  */
 @Composable
-fun FitDesc(
+fun StartingDesc(
     @StringRes excerciseDesc: Int,
     @DrawableRes excerciseImg: Int,
     modifier: Modifier = Modifier
@@ -275,7 +275,7 @@ fun FitDesc(
  * A composable function that has an IconButton that has the functionality of an expandable button
  */
 @Composable
-private fun FitItemButton(
+private fun StartingItemButton(
     expanded: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier

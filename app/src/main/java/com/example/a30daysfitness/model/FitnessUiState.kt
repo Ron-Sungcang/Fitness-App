@@ -1,7 +1,5 @@
 package com.example.a30daysfitness.model
 
-import com.example.a30daysfitness.model.ExcerciseRepository.starting
-
 data class FitnessUiState (
     val currentDessertIndex: Int = 0,
     val currentPrograms: List<Programs> = listOf(),
