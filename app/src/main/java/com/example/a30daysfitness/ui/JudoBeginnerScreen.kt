@@ -3,7 +3,6 @@ package com.example.a30daysfitness.ui
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -45,32 +44,26 @@ import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
 
 @Composable
-fun StartingStrenghtScreen(
+fun JudoBeginnerScreen(
     viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ){
     val uiState by viewModel.uiState.collectAsState()
-    StartingStrengthLazyList(uiState = uiState)
+    JudoLazyList(uiState = uiState)
 
 }
-
-/**
- * A composable function that consists of a lazycolumn to display
- * everything in a scrollable fashion
- */
 @Composable
-fun StartingStrengthLazyList(
+fun JudoLazyList(
     uiState: FitnessUiState,
-    modifier: Modifier = Modifier,
-) {
-    LazyColumn(modifier = modifier) {
+    modifier: Modifier = Modifier){
+    LazyColumn(modifier = modifier){
         item {
             Text(
-                text = stringResource(id = R.string.program1),
+                text = stringResource(id = R.string.program2),
                 style = MaterialTheme.typography.displayLarge,
                 textAlign = TextAlign.Center
             )
             Text(
-                text = stringResource(id = R.string.programdesc1),
+                text = stringResource(id = R.string.programdesc2),
                 style = MaterialTheme.typography.bodyLarge
             )
             Text(
@@ -78,117 +71,57 @@ fun StartingStrengthLazyList(
                 style = MaterialTheme.typography.displayMedium
             )
         }
-        item {
-            Text(
-                text = stringResource(id = R.string.dayA),
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(start = 8.dp)
-            )
-
-        }
         items(
             items = uiState.currentProgram1A,
-            ){excercise ->
+        ){excercise ->
             val saveExer = remember{
                 excercise
             }
-            StartingItem(
+            JudoItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
-
-
         item {
             Text(
-                text = stringResource(id = R.string.dayB),
+                text = stringResource(id = R.string.onemin),
                 style = MaterialTheme.typography.displaySmall,
                 modifier = Modifier.padding(start = 8.dp)
             )
-
-        }
-        items(uiState.currentProgram1B){excercise ->
-            val saveExer = remember{
-                excercise
-            }
-            StartingItem(
-                excercise = saveExer,
-                modifier = modifier.padding(8.dp)
-            )
-        }
-        item {
             Text(
                 text = stringResource(id = R.string.phase2),
                 style = MaterialTheme.typography.displayMedium
             )
-            Text(
-                text = stringResource(id = R.string.dayA),
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(start = 8.dp)
-            )
         }
-        items(uiState.currentProgram2A){excercise ->
+        items(
+            items = uiState.currentProgram2A,
+        ){excercise ->
             val saveExer = remember{
                 excercise
             }
-            StartingItem(
+            JudoItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
         }
-
         item {
             Text(
-                text = stringResource(id = R.string.dayB),
+                text = stringResource(id = R.string.onemin),
                 style = MaterialTheme.typography.displaySmall,
                 modifier = Modifier.padding(start = 8.dp)
             )
-
-        }
-        items(uiState.currentProgram2B){excercise ->
-            val saveExer = remember {
-                excercise
-            }
-            StartingItem(
-                excercise = saveExer,
-                modifier = modifier.padding(8.dp)
-            )
-        }
-
-        item {
             Text(
                 text = stringResource(id = R.string.phase3),
                 style = MaterialTheme.typography.displayMedium
             )
-            Text(
-                text = stringResource(id = R.string.dayA),
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(start = 8.dp)
-            )
         }
-        items(uiState.currentProgram3A){excercise ->
+        items(
+            items = uiState.currentProgram3A,
+        ){excercise ->
             val saveExer = remember{
                 excercise
             }
-            StartingItem(
-                excercise = saveExer,
-                modifier = modifier.padding(8.dp)
-            )
-        }
-
-        item {
-            Text(
-                text = stringResource(id = R.string.dayB),
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(start = 8.dp)
-            )
-
-        }
-        items(uiState.currentProgram3B){excercise ->
-            val saveExer = remember{
-                excercise
-            }
-            StartingItem(
+            JudoItem(
                 excercise = saveExer,
                 modifier = modifier.padding(8.dp)
             )
@@ -196,15 +129,11 @@ fun StartingStrengthLazyList(
     }
 }
 
-
-
-
-/**
- * A composable function that is responsible for cards that display
- * each individual workout
- */
 @Composable
-fun StartingItem(excercise: Excercises, modifier: Modifier = Modifier) {
+fun JudoItem(
+    excercise: Excercises,
+    modifier: Modifier = Modifier
+){
     var expanded by rememberSaveable { mutableStateOf(false) }
     Card(
         modifier = modifier,
@@ -217,16 +146,14 @@ fun StartingItem(excercise: Excercises, modifier: Modifier = Modifier) {
                 .padding(16.dp)
                 .sizeIn(minHeight = 72.dp)
         ) {
-            Box {
-                Image(
-                    painter = painterResource(excercise.imageRes),
-                    contentDescription = LocalContext.current.getString(excercise.nameRes),
-                    modifier = Modifier
-                        .size(72.dp)
-                        .clip(MaterialTheme.shapes.small)
-                )
-
-            }
+            Image(
+                painter = painterResource(excercise.imageRes),
+                contentDescription = LocalContext.current.getString(excercise.nameRes),
+                modifier = Modifier
+                    .size(72.dp)
+                    .clip(MaterialTheme.shapes.small)
+            )
+            
             Spacer(Modifier.width(16.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -237,31 +164,28 @@ fun StartingItem(excercise: Excercises, modifier: Modifier = Modifier) {
                     text = "Reps: " + excercise.reps.toString() + " " + "Sets: " + excercise.sets.toString(),
                     style = MaterialTheme.typography.bodyLarge
                 )
-                if (expanded) {
-                    StartingDesc(
+                if(expanded){
+                    JudoDesc(
                         excerciseDesc = excercise.descriptionRes,
                         excerciseImg = excercise.imageRes
                     )
                 }
             }
-            StartingItemButton(expanded = expanded, onClick = { expanded = !expanded })
+            JudoButton(expanded = expanded, onClick = { expanded = !expanded })
         }
     }
 }
 
-/**
- * Composable function for when the FitItem gets expanded
- */
 @Composable
-fun StartingDesc(
+fun JudoDesc(
     @StringRes excerciseDesc: Int,
     @DrawableRes excerciseImg: Int,
     modifier: Modifier = Modifier
-) {
+){
     Column(modifier = modifier) {
         Image(
             painter = painterResource(id = excerciseImg),
-            contentDescription = stringResource(id = R.string.squat)
+            contentDescription = stringResource(id = excerciseDesc)
         )
         Text(
             text = stringResource(id = excerciseDesc),
@@ -270,15 +194,12 @@ fun StartingDesc(
     }
 }
 
-/**
- * A composable function that has an IconButton that has the functionality of an expandable button
- */
 @Composable
-private fun StartingItemButton(
+fun JudoButton(
     expanded: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
-) {
+){
     IconButton(
         onClick = onClick,
         modifier = modifier
@@ -293,10 +214,8 @@ private fun StartingItemButton(
 
 @Preview
 @Composable
-private fun StartingPreview() {
+private fun JudoBeginnerScreen(){
     _30DaysFitnessTheme {
-        StartingStrengthLazyList(
-            uiState = FitnessUiState(),
-        )
+
     }
 }

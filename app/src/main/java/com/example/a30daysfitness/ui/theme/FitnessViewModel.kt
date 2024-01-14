@@ -2,7 +2,6 @@ package com.example.a30daysfitness.ui.theme
 
 import androidx.lifecycle.ViewModel
 import com.example.a30daysfitness.model.ExcerciseRepository.programs
-import com.example.a30daysfitness.model.ExcerciseRepository.starting
 import com.example.a30daysfitness.model.Excercises
 import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.model.Programs

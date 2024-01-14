@@ -14,6 +14,10 @@
     This program takes advantage of \"newbie gains\" by adding 10 pounds to the squat after 2 times it\'s performed,
         15-20 lbs to the deadlift the first couple times, and 10 lbs the next several times it\'s performed.
         For the bench press/shoulder press and the power clean you increment by 5lbs. This program is designed for 3 days a week M/W/F.</string>
+    <string name="programdesc2">This Judo circuit is made to develop the athlete\'s foundational strength. This is meant for beginner judokas to achieve base strength before moving
+        to the intermediate programs. This program is meant to be done in a circuit where each phase is done consecutively for the alloted amount of sets before moving to the next
+        phase (excercise 1 then the next excercise in the phase then reset back to excercise 1). After a month then the athlete can move on to the intermediate circuit
+    </string>
     <string name="phase1">Phase 1</string>
     <string name="phase2">Phase 2</string>
     <string name="phase3">Phase 3</string>
@@ -52,6 +56,41 @@
     </string>
     <string name="deadclean">Deadlift/Power Clean</string>
     <string name="deadcleandesc">At this point you’ve become strong enough to pull enough weight that we limit deadlift and cleaning frequency.</string>
+    <string name="dowelhinge">Dowel Hip Hinge on Incline board</string>
+    <string name="dowelhingedesc">1. Stand on an incline board.\n
+        2.Shift your weight to your heels and push your hips back towards the wall behind you while you hinge forward at the hips. Think about sticking your butt out behind you. As you hinge, the dowel should not lose contact with those three points. If it does, you know you’re doing the move incorrectly.\n
+        3. Lower your torso until it’s midway between vertical and parallel to the floor. Pause. Keep a slight bend in your knees during the downward and upward phase.\n
+        4. Reverse the movement by contracting your glutes and pushing your hips forward and upward to return to the starting position. </string>
+    <string name="deadliftjump">Deadlift to toes - to jump</string>
+    <string name="deadliftjumpdesc">1. Do a regular deadlift and finish on your toes/ball of your foot \n
+    2. Set the bar down in a controlled fashion. \n
+    3. Do a regular deadlift with a jump</string>
+    <string name="lungeRow">Barbell bent over row from lunge</string>
+    <string name="lungeRowDesc">1. Grip bar tightly to your hips.\n
+    2. Go into a bent over lunge position.\n
+    3. Set bar down then pull to the waist.</string>
+    <string name="deepsquatrow">Mid cable row in deep squat</string>
+    <string name="deepsquatrowdesc">1. Position cable in hip height.\n
+    2. Go down in a deeep squat position.\n
+    3. Pull cable in a rowing motion.</string>
+    <string name="zombiesquat">Zombie Squat on incline board</string>
+    <string name="zombiesquatdesc">1. Stand on incline board. \n
+    2. Place the bar right in front of your shoulder muscles, once the bar is stable stick your arms out like a zombie.\n
+    3. With chest up go as low as you can preferrably to 90 degrees.\n
+    4. Reset to standing</string>
+    <string name="armpulltowaist">High cable straight arm pull to waist in hinge hold</string>
+    <string name="armpulltowaistdesc">1. Set up your attachment of choice (i.e. straight bar, wide grip bar, or rope attachment) to a cable or lat pulldown machine and grip the attachment with an overhand (palms facing down) or neutral shoulder-width grip (palms facing in).\n
+        2. Then step back from the machine and straighten your arms. Keep your chest up and pull your shoulders down and back for better shoulder positioning. Brace your anterior core.\n
+        3. Hinge your butt back and lean forward to a 35 to a 45-degree angle, feeling a slight stretch in your lats with your arms up in the top position.\n
+        4. Keeping straight arms, pull the bar down to your thighs focusing on pulling your shoulder blades down and back. Pause for a second.\n
+        5. Then slowly bring it back up, keeping your elbows in place, and raise the bar until you feel a stretch in your lats.\n
+        6. Repeat for reps. </string>
+    <string name="shoulderpfromknee">Shoulder Press from kneeling</string>
+    <string name="shoulderpfromkneedesc">1. Find a stable half kneeling position with the knee at 90 degrees.\n
+        2. Start with the dumbbell at the shoulder, with the elbow facing slightly away from the body.\n
+        3. Press the dumbbell overhead and lock the elbow to move through the full range of motion.\n
+        4. Move back to the starting position with control. Do not let the weight pull you out of position.</string>
+    <string name="onemin">1 MINUTE REST</string>
     <string name="expand_button_content_description">See more or less information about an exercise.</string>
 
 

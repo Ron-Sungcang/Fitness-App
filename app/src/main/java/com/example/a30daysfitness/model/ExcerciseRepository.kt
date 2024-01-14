@@ -20,7 +20,7 @@ object ExcerciseRepository {
             imageRes = R.drawable._day
         )
     )
-    val starting = listOf(
+    val excercises = listOf(
         Excercises(
             nameRes = R.string.squat,
             descriptionRes = R.string.squatdesc,
@@ -71,7 +71,48 @@ object ExcerciseRepository {
             imageRes = R.drawable.download,
             reps = 0,
             sets = 0
+        ),
+        Excercises(
+            nameRes = R.string.dowelhinge,
+            descriptionRes = R.string.dowelhingedesc,
+            imageRes = R.drawable.dowel_hip_hinge,
+            reps = 4,
+            sets = 3
+        ),
+        Excercises(
+            nameRes = R.string.deadliftjump,
+            descriptionRes = R.string.deadliftjumpdesc,
+            imageRes = R.drawable._1200px_rear_deltoid_row_barbell_1_svg,
+            reps = 4,
+            sets = 3
+        ),
+        Excercises(
+            nameRes = R.string.lungeRow,
+            descriptionRes = R.string.lungeRowDesc,
+            imageRes = R.drawable.lungerow,
+            reps = 5,
+            sets = 3
+        ),
+        Excercises(
+            nameRes = R.string.zombiesquat,
+            descriptionRes = R.string.zombiesquatdesc,
+            imageRes = R.drawable.zombiesquat,
+            reps = 6,
+            sets = 3
+        ),
+        Excercises(
+            nameRes = R.string.armpulltowaist,
+            descriptionRes = R.string.armpulltowaistdesc,
+            imageRes = R.drawable.hingebackpulldown,
+            reps = 8,
+            sets = 3
+        ),
+        Excercises(
+            nameRes = R.string.shoulderpfromknee,
+            descriptionRes = R.string.shoulderpfromkneedesc,
+            imageRes = R.drawable.full_kneeling_dumbbell_overhead_press,
+            reps = 8,
+            sets = 3
         )
     )
-
 }
