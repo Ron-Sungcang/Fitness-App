@@ -14,6 +14,10 @@
     This program takes advantage of \"newbie gains\" by adding 10 pounds to the squat after 2 times it\'s performed,
         15-20 lbs to the deadlift the first couple times, and 10 lbs the next several times it\'s performed.
         For the bench press/shoulder press and the power clean you increment by 5lbs. This program is designed for 3 days a week M/W/F.</string>
+    <string name="programdesc2">This Judo circuit is made to develop the athlete\'s foundational strength. This is meant for beginner judokas to achieve base strength before moving
+        to the intermediate programs. This program is meant to be done in a circuit where each phase is done consecutively for the alloted amount of sets before moving to the next
+        phase (excercise 1 then the next excercise in the phase then reset back to excercise 1). After a month then the athlete can move on to the intermediate circuit
+    </string>
     <string name="phase1">Phase 1</string>
     <string name="phase2">Phase 2</string>
     <string name="phase3">Phase 3</string>
@@ -86,6 +90,7 @@
         2. Start with the dumbbell at the shoulder, with the elbow facing slightly away from the body.\n
         3. Press the dumbbell overhead and lock the elbow to move through the full range of motion.\n
         4. Move back to the starting position with control. Do not let the weight pull you out of position.</string>
+    <string name="onemin">1 MINUTE REST</string>
     <string name="expand_button_content_description">See more or less information about an exercise.</string>
 
 

@@ -39,7 +39,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a30daysfitness.R
-import com.example.a30daysfitness.model.ExcerciseRepository
 import com.example.a30daysfitness.model.Excercises
 import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
