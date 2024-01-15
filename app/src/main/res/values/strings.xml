@@ -179,6 +179,9 @@
         5. Lower slowly back down, but don't relax all the way.\n
         6. Repeat for 15 to 20 repetitions with perfect form for each rep.</string>
     <string name="onemin">1 MINUTE REST</string>
+    <string name="push">Push</string>
+    <string name="pull">Pull</string>
+    <string name="legs">Legs and Core</string>
     <string name="expand_button_content_description">See more or less information about an exercise.</string>
 
 
