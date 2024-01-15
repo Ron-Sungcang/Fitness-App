@@ -18,33 +18,34 @@ import com.example.a30daysfitness.R
 import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.ui.components.ExerciseItem
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
-import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
 
 @Composable
-fun JudoBeginnerScreen(
+fun ThreeDayScreen(
     viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ){
     val uiState by viewModel.uiState.collectAsState()
-    JudoLazyList(uiState = uiState)
+    ThreeDayLazyList(uiState = uiState)
 
 }
+
 @Composable
-fun JudoLazyList(
+fun ThreeDayLazyList(
     uiState: FitnessUiState,
-    modifier: Modifier = Modifier){
+    modifier: Modifier = Modifier
+){
     LazyColumn(modifier = modifier){
         item {
             Text(
-                text = stringResource(id = R.string.program2),
+                text = stringResource(id = R.string.program3),
                 style = MaterialTheme.typography.displayLarge,
                 textAlign = TextAlign.Center
             )
             Text(
-                text = stringResource(id = R.string.programdesc2),
+                text = stringResource(id = R.string.programdesc3),
                 style = MaterialTheme.typography.bodyLarge
             )
             Text(
-                text = stringResource(id = R.string.phase1),
+                text = stringResource(id = R.string.push),
                 style = MaterialTheme.typography.displayMedium
             )
         }
@@ -61,14 +62,9 @@ fun JudoLazyList(
         }
         item {
             Text(
-                text = stringResource(id = R.string.onemin),
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(start = 8.dp)
-            )
-            Text(
-                text = stringResource(id = R.string.phase2),
+                text = stringResource(id = R.string.pull),
                 style = MaterialTheme.typography.displayMedium
-            )
+                )
         }
         items(
             items = uiState.currentProgram2A,
@@ -83,12 +79,7 @@ fun JudoLazyList(
         }
         item {
             Text(
-                text = stringResource(id = R.string.onemin),
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(start = 8.dp)
-            )
-            Text(
-                text = stringResource(id = R.string.phase3),
+                text = stringResource(id = R.string.legs),
                 style = MaterialTheme.typography.displayMedium
             )
         }
@@ -106,10 +97,7 @@ fun JudoLazyList(
     }
 }
 
+
 @Preview
 @Composable
-private fun JudoBeginnerScreen(){
-    _30DaysFitnessTheme {
-
-    }
-}
+private fun ThreeDayPreview(){}

@@ -7,13 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.a30daysfitness.model.ExcerciseRepository
-import com.example.a30daysfitness.ui.FitScreen
-import com.example.a30daysfitness.ui.StartingStrenghtScreen
-import com.example.a30daysfitness.ui.StartingStrengthLazyList
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
 
 class MainActivity : ComponentActivity() {
