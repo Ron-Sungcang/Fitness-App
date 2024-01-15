@@ -182,6 +182,7 @@
     <string name="push">Push</string>
     <string name="pull">Pull</string>
     <string name="legs">Legs and Core</string>
+    <string name="back_button">Back</string>
     <string name="expand_button_content_description">See more or less information about an exercise.</string>
 
 
