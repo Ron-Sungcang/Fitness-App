@@ -19,14 +19,6 @@ import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.ui.components.ExerciseItem
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
 
-@Composable
-fun ThreeDayScreen(
-    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
-){
-    val uiState by viewModel.uiState.collectAsState()
-    ThreeDayLazyList(uiState = uiState)
-
-}
 
 @Composable
 fun ThreeDayLazyList(

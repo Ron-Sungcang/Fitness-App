@@ -1,23 +1,28 @@
 package com.example.a30daysfitness.model
 
+import com.example.a30daysfitness.FitnessScreen
 import com.example.a30daysfitness.R
+import com.example.a30daysfitness.ui.theme.FitnessViewModel
 
 object ExcerciseRepository {
     val programs = listOf(
         Programs(
             nameRes = R.string.program1,
             descriptionRes = R.string.program1desc,
-            imageRes = R.drawable.starting_strength
+            imageRes = R.drawable.starting_strength,
+            setup = FitnessScreen.Starting
         ),
         Programs(
             nameRes = R.string.program2,
             descriptionRes = R.string.program2desc,
-            imageRes = R.drawable.judo_begin
+            imageRes = R.drawable.judo_begin,
+            setup = FitnessScreen.Judo
         ),
         Programs(
             nameRes = R.string.program3,
             descriptionRes = R.string.program3desc,
-            imageRes = R.drawable._day
+            imageRes = R.drawable._day,
+            setup = FitnessScreen.ThreeDay
         )
     )
     val excercises = listOf(
@@ -90,6 +95,13 @@ object ExcerciseRepository {
             descriptionRes = R.string.lungeRowDesc,
             imageRes = R.drawable.lungerow,
             reps = 5,
+            sets = 3
+        ),
+        Excercises(
+            nameRes = R.string.deepsquatrow,
+            descriptionRes = R.string.deepsquatrowdesc,
+            imageRes = R.drawable.midcablerowsquat,
+            reps = 8,
             sets = 3
         ),
         Excercises(

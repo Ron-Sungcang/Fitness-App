@@ -21,14 +21,6 @@ import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
 
 @Composable
-fun JudoBeginnerScreen(
-    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
-){
-    val uiState by viewModel.uiState.collectAsState()
-    JudoLazyList(uiState = uiState)
-
-}
-@Composable
 fun JudoLazyList(
     uiState: FitnessUiState,
     modifier: Modifier = Modifier){
