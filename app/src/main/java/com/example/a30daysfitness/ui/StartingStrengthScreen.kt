@@ -20,14 +20,6 @@ import com.example.a30daysfitness.ui.components.ExerciseItem
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
 
-@Composable
-fun StartingStrengthScreen(
-    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
-){
-    val uiState by viewModel.uiState.collectAsState()
-    StartingStrengthLazyList(uiState = uiState)
-
-}
 
 /**
  * A composable function that consists of a lazycolumn to display

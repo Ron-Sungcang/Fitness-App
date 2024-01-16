@@ -6,5 +6,6 @@ import androidx.annotation.StringRes
 data class Programs(
     @StringRes val nameRes: Int,
     @StringRes val descriptionRes:Int,
-    @DrawableRes val imageRes: Int
+    @DrawableRes val imageRes: Int,
+    //val setup: Unit
 )

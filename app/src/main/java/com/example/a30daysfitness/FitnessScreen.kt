@@ -18,6 +18,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -31,10 +32,26 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.model.Programs
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
+import androidx.navigation.compose.rememberNavController
+import com.example.a30daysfitness.ui.JudoLazyList
+import com.example.a30daysfitness.ui.StartingStrengthLazyList
+import com.example.a30daysfitness.ui.ThreeDayLazyList
+
+
+enum class FitnessScreen() {
+    Start,
+    Starting,
+    Judo,
+    ThreeDay
+}
+
 
 /**
  * Composable that displays the topBar and displays back button if back navigation is possible.
@@ -64,23 +81,61 @@ fun FitAppBar(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FitScreen(
-    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    navController: NavHostController = rememberNavController()
 ){
-    val uiState by viewModel.uiState.collectAsState()
-    FitLazyList(uiState = uiState)
+    val startingstring = stringResource(id = R.string.program1)
+    val judostring = stringResource(id = R.string.program2)
+    val threedaystring = stringResource(id = R.string.program3)
+    Scaffold (
+        topBar = {
+            FitAppBar(
+                canNavigateBack =  navController.previousBackStackEntry != null,
+                navigateUp = { navController.navigateUp()  }
+            )
+        }
+    ){innerPadding ->
+        val uiState by viewModel.uiState.collectAsState()
+
+        NavHost(navController = navController,
+            startDestination = FitnessScreen.Start.name,
+            modifier = Modifier.padding(innerPadding)){
+            composable(route = FitnessScreen.Start.name){
+                FitLazyList(uiState = uiState,viewModel,navController)
+            }
+            composable(route = startingstring){
+                StartingStrengthLazyList(uiState = uiState)
+            }
+            composable(route = judostring){
+                JudoLazyList(uiState = uiState)
+            }
+            composable(route = threedaystring){
+                ThreeDayLazyList(uiState = uiState)
+            }
+        }
+    }
 }
+
 
 @Composable
 fun FitLazyList(
     uiState: FitnessUiState,
+    viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    navController: NavHostController = rememberNavController(),
     modifier: Modifier = Modifier)
 {
     LazyColumn(modifier = modifier){
         items(uiState.currentPrograms){programs ->
+            val string = stringResource(id = programs.nameRes)
             FitItem(
                 programs = programs,
+                onClick = {
+                    viewModel.setupScreens(programs.nameRes)
+                    navController.navigate(string)
+                          },
                 modifier = Modifier.padding(8.dp)
                 )
         }
@@ -89,12 +144,16 @@ fun FitLazyList(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FitItem(programs: Programs, modifier: Modifier = Modifier){
+fun FitItem(
+    programs: Programs,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
     Card(
         modifier = modifier,
         shape = MaterialTheme.shapes.medium,
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        onClick = {}
+        onClick = onClick
     ){
         Column(modifier = Modifier
             .fillMaxWidth()

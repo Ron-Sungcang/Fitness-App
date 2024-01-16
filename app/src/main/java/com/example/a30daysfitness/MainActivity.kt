@@ -9,9 +9,16 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.ui.theme._30DaysFitnessTheme
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 class MainActivity : ComponentActivity() {
+    //Dessert UI state
+    private val _uiState = MutableStateFlow(FitnessUiState())
+    val uiState: StateFlow<FitnessUiState> = _uiState.asStateFlow()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
