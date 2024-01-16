@@ -1,5 +1,6 @@
 package com.example.a30daysfitness
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.a30daysfitness.model.FitnessUiState
 import com.example.a30daysfitness.model.Programs
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
@@ -45,11 +47,11 @@ import com.example.a30daysfitness.ui.StartingStrengthLazyList
 import com.example.a30daysfitness.ui.ThreeDayLazyList
 
 
-enum class FitnessScreen() {
-    Start,
-    Starting,
-    Judo,
-    ThreeDay
+enum class FitnessScreen(@StringRes val title: Int) {
+    Start(title = R.string.app_name),
+    Starting(title = R.string.program1),
+    Judo(title = R.string.program2),
+    ThreeDay(title = R.string.program3)
 }
 
 
@@ -59,12 +61,13 @@ enum class FitnessScreen() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FitAppBar(
+    currentScreen: FitnessScreen,
     canNavigateBack: Boolean,
     navigateUp: () -> Unit,
     modifier: Modifier = Modifier
 ){
     TopAppBar(
-        title = {Text(stringResource(id = R.string.app_name)) },
+        title = {Text(stringResource(id = currentScreen.title)) },
         colors = TopAppBarDefaults.mediumTopAppBarColors(
         containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
@@ -87,12 +90,15 @@ fun FitScreen(
     viewModel: FitnessViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     navController: NavHostController = rememberNavController()
 ){
-    val startingstring = stringResource(id = R.string.program1)
-    val judostring = stringResource(id = R.string.program2)
-    val threedaystring = stringResource(id = R.string.program3)
+
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentScreen = FitnessScreen.valueOf(
+        backStackEntry?.destination?.route ?: FitnessScreen.Start.name
+    )
     Scaffold (
         topBar = {
             FitAppBar(
+                currentScreen = currentScreen,
                 canNavigateBack =  navController.previousBackStackEntry != null,
                 navigateUp = { navController.navigateUp()  }
             )
@@ -106,13 +112,13 @@ fun FitScreen(
             composable(route = FitnessScreen.Start.name){
                 FitLazyList(uiState = uiState,viewModel,navController)
             }
-            composable(route = startingstring){
+            composable(route = FitnessScreen.Starting.name){
                 StartingStrengthLazyList(uiState = uiState)
             }
-            composable(route = judostring){
+            composable(route = FitnessScreen.Judo.name){
                 JudoLazyList(uiState = uiState)
             }
-            composable(route = threedaystring){
+            composable(route = FitnessScreen.ThreeDay.name){
                 ThreeDayLazyList(uiState = uiState)
             }
         }
@@ -129,12 +135,11 @@ fun FitLazyList(
 {
     LazyColumn(modifier = modifier){
         items(uiState.currentPrograms){programs ->
-            val string = stringResource(id = programs.nameRes)
             FitItem(
                 programs = programs,
                 onClick = {
                     viewModel.setupScreens(programs.nameRes)
-                    navController.navigate(string)
+                    navController.navigate(programs.setup.name)
                           },
                 modifier = Modifier.padding(8.dp)
                 )

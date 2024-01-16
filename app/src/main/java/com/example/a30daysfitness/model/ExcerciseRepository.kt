@@ -1,5 +1,6 @@
 package com.example.a30daysfitness.model
 
+import com.example.a30daysfitness.FitnessScreen
 import com.example.a30daysfitness.R
 import com.example.a30daysfitness.ui.theme.FitnessViewModel
 
@@ -9,19 +10,19 @@ object ExcerciseRepository {
             nameRes = R.string.program1,
             descriptionRes = R.string.program1desc,
             imageRes = R.drawable.starting_strength,
-            //setup = FitnessViewModel().setupStarting()
+            setup = FitnessScreen.Starting
         ),
         Programs(
             nameRes = R.string.program2,
             descriptionRes = R.string.program2desc,
             imageRes = R.drawable.judo_begin,
-           // setup = FitnessViewModel().setupJudo()
+            setup = FitnessScreen.Judo
         ),
         Programs(
             nameRes = R.string.program3,
             descriptionRes = R.string.program3desc,
             imageRes = R.drawable._day,
-          //  setup = FitnessViewModel().setupThreeDay()
+            setup = FitnessScreen.ThreeDay
         )
     )
     val excercises = listOf(
